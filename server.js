@@ -14,7 +14,7 @@ const app = express();
 passport.use(
   new GoogleStrategy(
     {
-      callbackURL: "http://localhost:3000/auth/google/callback",
+      callbackURL: "http://0.0.0.0:5000/auth/google/callback",
       clientID:
         "448989001757-1jur341vs47fp5hvhnmfp56gljk7oi8i.apps.googleusercontent.com",
       clientSecret: "VRZDMArVNYXlXu9ynMyvWX7z",
