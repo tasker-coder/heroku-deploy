@@ -80,14 +80,14 @@
                     password: $("#password").val(),
                     login_parameter: "normal"
                 };
-                $.post("http://localhost:3000/", data, (response)=> {
+                $.post("http://localhost:5000/", data, (response)=> {
                     if (response){
                         alert("logged in.");
-                        window.location.href = "http://localhost:3000/tasks";
+                        window.location.href = "http://localhost:5000/tasks";
                     }
                     else{
                         alert("Wrong e-mail or password.");
-                        window.location.href = "http://localhost:3000/register";
+                        window.location.href = "http://localhost:5000/register";
                     }
                 });
            }
@@ -102,7 +102,7 @@
              {
                  alert("enter email");
              }else{
-                 $.post("http://localhost:3000/forgot" , data ,(response) => {
+                 $.post("http://localhost:5000/forgot" , data ,(response) => {
                     if (response){
                         alert("reset link sent to your email");
                         
@@ -117,7 +117,7 @@
         </script>
         <script>
             function toRegister(){
-                window.location.href = "http://localhost:3000/register";
+                window.location.href = "http://localhost:5000/register";
             }
         </script>
         <script>
@@ -131,14 +131,14 @@
                     login_parameter: "google"
                     
                 };
-                $.post("http://localhost:3000/", data, (response)=> {
+                $.post("http://localhost:5000/", data, (response)=> {
                     if (response){
                         alert("logged in.");
-                        window.location.href = "http://localhost:3000/tasks";
+                        window.location.href = "http://localhost:5000/tasks";
                     }
                     else{
                         alert("Wrong e-mail or password.");
-                        window.location.href = "http://localhost:3000/register";
+                        window.location.href = "http://localhost:5000/register";
                     }
                 });
                 

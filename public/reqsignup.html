@@ -417,7 +417,7 @@
                        zip: $("#zip").val(),
                        mobile:$("#mobile").val()
                       }; 
-        $.post("http://localhost:3000/api/accounts", acc,
+        $.post("http://localhost:5000/api/accounts", acc,
           function (data) {
             alert(data.message);
             }
