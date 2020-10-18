@@ -59,7 +59,7 @@ app.use((req, res, next) => {
 });
 
 const MONGODB_URI = "mongodb+srv://tasker-coder:taskeratlas4@mycluster.cb8cm.mongodb.net/<dbname>?retryWrites=true&w=majority"
-mongoose.connect(MONGODB_URI ||"mongodb://localhost:27017/Icrowdlogin", {
+mongoose.connect(MONGODB_URI , {
   useNewUrlParser: true,
 });
 
