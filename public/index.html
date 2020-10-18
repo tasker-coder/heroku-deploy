@@ -97,11 +97,12 @@
               var data= { 
                 email: $("#email").val(),
               }
+
              if(email === "")
              {
                  alert("enter email");
              }else{
-                 $.post("https://logindemo-nodedeploy.herokuapp.com/forgot" , data ,(response) => {
+                 $.post("https://logindemo-nodedeploy.herokuapp.com/forgot" , JSON.stringify(data) ,(response) => {
                     if (response){
                         alert("reset link sent to your email");
                         
