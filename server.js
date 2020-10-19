@@ -16,8 +16,8 @@ passport.use(
     {
       callbackURL: "https://logindemo-nodedeploy.herokuapp.com/auth/google/callback",
       clientID:
-        "448989001757-1jur341vs47fp5hvhnmfp56gljk7oi8i.apps.googleusercontent.com",
-      clientSecret: "VRZDMArVNYXlXu9ynMyvWX7z",
+        "594690404843-bu3i8bo7li56k51oq16p2vgbpacfid81.apps.googleusercontent.com",
+      clientSecret: "rTqwGVx8QIFm2HoEZ8LiPG3L",
       prompt: "select_account",
     },
     (accessToken, refreshToken, profile, done) => {
