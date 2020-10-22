@@ -127,6 +127,37 @@ app.post(
         res.send({ message: "Data Successfully Added" });
       }
     });
+
+     //Subscribing to our audience in mailchimp which will then send a welcome mail if successful.
+     const data = {
+      members: [
+        {
+          email_address: req.body.email,
+          status: "subscribed",
+          merge_fields: {
+            FNAME: req.body.firstName,
+            LNAME: req.body.lastName,
+          },
+        },
+      ],
+    };
+    jsonData = JSON.stringify(data);
+
+    const url = "https://us2.api.mailchimp.com/3.0/lists/6052b4bcc2";
+    const options = {
+      method: "POST",
+      auth: "apikey:13e7434a4460c4e58242f6c2aa2d9068-us2",
+    };
+
+    const request = https.request(url, options, (response) => {
+      response.on("data", (data) => {
+        console.log(JSON.parse(data));
+      });
+    });
+
+    request.write(jsonData);
+    request.end();
+    console.log(req.body.firstName, req.body.lastName, req.body.email);
   }
 );
 
@@ -178,7 +209,6 @@ app.post(
         if (err) {
           console.log(err);
           res.redirect('/');
-          console.log('ok logged in.');
           res.send(true);
         } else {
           passport.authenticate('local')(req, res, () => {
